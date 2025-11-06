@@ -1,0 +1,155 @@
+{
+  "categories": {
+    "climate": {
+      "name": "Climate & Environment",
+      "sources": [
+        {
+          "name": "NASA Climate Change",
+          "url": "https://climate.nasa.gov/rss/news.xml",
+          "credibility": 0.95,
+          "bias": "scientific"
+        },
+        {
+          "name": "Climate Central",
+          "url": "https://www.climatecentral.org/rss.xml",
+          "credibility": 0.90,
+          "bias": "environmental"
+        },
+        {
+          "name": "Carbon Brief",
+          "url": "https://www.carbonbrief.org/rss",
+          "credibility": 0.88,
+          "bias": "environmental"
+        },
+        {
+          "name": "Environmental Protection Agency",
+          "url": "https://www.epa.gov/newsroom/rss.xml",
+          "credibility": 0.92,
+          "bias": "governmental"
+        }
+      ]
+    },
+    "renewable_energy": {
+      "name": "Renewable Energy",
+      "sources": [
+        {
+          "name": "Solar Power World",
+          "url": "https://www.solarpowerworldonline.com/feed/",
+          "credibility": 0.85,
+          "bias": "industry"
+        },
+        {
+          "name": "Wind Power Engineering",
+          "url": "https://www.windpowerengineering.com/feed/",
+          "credibility": 0.83,
+          "bias": "industry"
+        },
+        {
+          "name": "PV Magazine",
+          "url": "https://www.pv-magazine.com/feed/",
+          "credibility": 0.87,
+          "bias": "industry"
+        },
+        {
+          "name": "Clean Energy Wire",
+          "url": "https://www.cleanenergywire.org/rss.xml",
+          "credibility": 0.86,
+          "bias": "environmental"
+        }
+      ]
+    },
+    "technology": {
+      "name": "Technology & Science",
+      "sources": [
+        {
+          "name": "MIT Technology Review",
+          "url": "https://www.technologyreview.com/feed/",
+          "credibility": 0.92,
+          "bias": "academic"
+        },
+        {
+          "name": "Science Daily",
+          "url": "https://www.sciencedaily.com/rss/all.xml",
+          "credibility": 0.90,
+          "bias": "scientific"
+        },
+        {
+          "name": "Nature News",
+          "url": "https://www.nature.com/nature.rss",
+          "credibility": 0.95,
+          "bias": "scientific"
+        },
+        {
+          "name": "Ars Technica",
+          "url": "https://feeds.arstechnica.com/arstechnica/index",
+          "credibility": 0.82,
+          "bias": "tech"
+        }
+      ]
+    },
+    "fact_checking": {
+      "name": "Fact-Checking Sources",
+      "sources": [
+        {
+          "name": "Snopes",
+          "url": "https://www.snopes.com/feeds/",
+          "credibility": 0.88,
+          "bias": "fact-check"
+        },
+        {
+          "name": "FactCheck.org",
+          "url": "https://www.factcheck.org/feed/",
+          "credibility": 0.91,
+          "bias": "fact-check"
+        },
+        {
+          "name": "PolitiFact",
+          "url": "https://www.politifact.com/rss/all/",
+          "credibility": 0.85,
+          "bias": "fact-check"
+        },
+        {
+          "name": "Reuters Fact Check",
+          "url": "https://www.reuters.com/arc/outboundfeeds/rss/category/world/fact-check/",
+          "credibility": 0.93,
+          "bias": "news"
+        }
+      ]
+    },
+    "general_news": {
+      "name": "General News",
+      "sources": [
+        {
+          "name": "BBC Science",
+          "url": "http://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+          "credibility": 0.87,
+          "bias": "news"
+        },
+        {
+          "name": "Associated Press",
+          "url": "https://feeds.apnews.com/rss/apf-science",
+          "credibility": 0.90,
+          "bias": "news"
+        },
+        {
+          "name": "Reuters Science",
+          "url": "https://feeds.reuters.com/reuters/scienceNews",
+          "credibility": 0.89,
+          "bias": "news"
+        }
+      ]
+    }
+  },
+  "updateFrequency": {
+    "high_priority": 300000,
+    "medium_priority": 900000,
+    "low_priority": 1800000
+  },
+  "categories_priority": {
+    "climate": "high_priority",
+    "renewable_energy": "high_priority", 
+    "technology": "medium_priority",
+    "fact_checking": "high_priority",
+    "general_news": "low_priority"
+  }
+} 

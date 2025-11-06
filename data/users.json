@@ -1,0 +1,20 @@
+[
+  {
+    "id": "user1",
+    "email": "student@greenplanet.edu",
+    "password": "student123",
+    "name": "Alex Student"
+  },
+  {
+    "id": "user2",
+    "email": "teacher@greenplanet.edu", 
+    "password": "teacher123",
+    "name": "Dr. Sarah Green"
+  },
+  {
+    "id": "user3",
+    "email": "admin@greenplanet.edu",
+    "password": "admin123",
+    "name": "Green Planet Admin"
+  }
+] 

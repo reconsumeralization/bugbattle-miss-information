@@ -1,0 +1,21 @@
+{
+  "events": {
+    "expert_consultation": "User consulted AI expert",
+    "video_generated": "Expert video generated",
+    "fact_check_completed": "Fact-checking round completed",
+    "misinformation_detected": "Misinformation successfully identified",
+    "wikipedia_verified": "Claim verified against Wikipedia"
+  },
+  "metrics": {
+    "engagement": "Time spent on platform",
+    "learning": "Accuracy improvement over time",
+    "completion": "Games completed vs started",
+    "expert_usage": "Expert consultation rate"
+  },
+  "competition": {
+    "track_tavus_usage": true,
+    "monitor_performance": true,
+    "measure_impact": true,
+    "collect_feedback": true
+  }
+}

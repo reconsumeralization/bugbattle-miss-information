@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <base href="https://aistudio.google.com/"> Removed this line -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vulnerability Testing Framework | Simulating Web App Security</title>
+  <meta name="referrer" content="origin">
+  <link rel="canonical" href="https://vtf.example.com/">
+  <meta name="description" content="A web application simulating a professional-grade security testing platform, designed to identify and analyze vulnerabilities like client-side static API key exposure and IDORs found in modern web applications.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vtf.example.com/">
+  <meta property="og:title" content="Vulnerability Testing Framework">
+  <meta property="og:description" content="Simulating a professional-grade security testing platform.">
+  <meta property="og:image" content="https://ai.google.dev/static/site-assets/images/share-ais-02.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://vtf.example.com/">
+  <meta property="twitter:title" content="Vulnerability Testing Framework">
+  <meta property="twitter:description" content="Simulating a professional-grade security testing platform.">
+  <meta property="twitter:image" content="https://ai.google.dev/static/site-assets/images/share-ais-02.png">
+
+  <!-- PWA & Theme -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="VTF">
+  <meta name="apple-mobile-web-app-title" content="VTF">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#111827">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+  <link rel="preconnect" href="//apis.google.com">
+  <link rel="preconnect" href="//www.googletagmanager.com">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300&family=Google+Sans+Text:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Emoji&display=block">
+  <link rel="stylesheet" href="https://www.gstatic.com/external_hosted/katex/dist/katex.min.css">
+
+  <!-- Manifest -->
+  <link rel="manifest" crossorigin="use-credentials" href="/manifest.json">
+
+  <!-- Favicons (using AI Studio's for simulation) -->
+  <link rel="icon" href="//www.gstatic.com/aistudio/ai_studio_favicon_32x32.png" sizes="32x32">
+  <link rel="apple-touch-icon-precomposed" href="//www.gstatic.com/aistudio/ai_studio_favicon_32x32.png" sizes="32x32">
+  <link rel="icon" href="//www.gstatic.com/aistudio/ai_studio_favicon_96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon-precomposed" href="//www.gstatic.com/aistudio/ai_studio_favicon_96x96.png" sizes="96x96">
+  <link rel="icon" href="//www.gstatic.com/aistudio/ai_studio_favicon_180x180.png" sizes="180x180">
+  <link rel="apple-touch-icon-precomposed" href="//www.gstatic.com/aistudio/ai_studio_favicon_180x180.png" sizes="180x180">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'primary': { light: '#60a5fa', DEFAULT: '#3b82f6', dark: '#2563eb' },
+            'secondary': '#10b981',
+            'background': '#111827',
+            'surface': '#1f2937',
+            'on-surface': '#f3f4f6',
+            'on-surface-muted': '#9ca3af',
+          },
+          animation: { 'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite' }
+        }
+      }
+    }
+  </script>
+
+  <!-- Mock WIZ_global_data (inspired by Google page structures) -->
+  <script data-id="_gd" nonce="sim-wiz-nonce">
+    window.WIZ_global_data = {
+      "PeqOqb": "AIzaSyBMkT3C6wEWAJmpaF6WXKs1W9CThdaYuq8", // Static API Key (Observed)
+      "WIu0Nc": "AIzaSyDdP816MREB3SkjZO04QXbjsigfcI0GWOs", // Static API Key (Observed)
+      "S06Grb": "MOCK_USER_ID_112233445566778899", // Mock User ID (Google Account ID format)
+      "oPEP7c": "mockuser@example.com",             // Mock PII (email)
+      "CoJqbf": "https://alkalimakersuite-pa.clients6.google.com", // Static Endpoint (Observed)
+      "EBvNTe": "823511539352-ojaretejk1s95sdvkic0te923pt7knpu.apps.googleusercontent.com", // Static OAuth Client ID (Observed)
+      "FdrFJe": "MOCK_SESSION_ID_" + Date.now(), // Mock Session-specific ID
+      "SNlM0e": "MOCK_SESSION_TOKEN:" + Date.now(), // Mock Session-specific Token
+      "WZsZ1e": "MOCK_ALTERNATE_SESSION_TOKEN_" + Math.random().toString(36).substring(2), // Mock for another session-like token
+      "W3Yyqf": "MOCK_USER_ID_112233445566778899", // Often mirrors S06Grb
+      "Im6cmf": "/_/MakerSuite",                   // Common base path for resources
+      "appVersion": "sim-1.0.0",
+      "isDebug": false
+      // Other configuration flags can be added here for simulation
+    };
+    // Ensure W3Yyqf mirrors S06Grb dynamically if S06Grb were dynamic (though it's static mock here for simplicity)
+    window.WIZ_global_data.W3Yyqf = window.WIZ_global_data.S06Grb;
+  </script>
+
+  <!-- Cookie Consent & GTM (order similar to AI Studio) -->
+  <script nonce="sim-nonce-cookie-init">
+      function glueCookieNotificationBarLoaded() {
+        if (window.glue && window.glue.CookieNotificationBar && window.glue.CookieNotificationBar.instance) {
+            window.glue.CookieNotificationBar.instance.listen('visibilitychange', (event) => {
+            const cookieBanner = document.getElementsByClassName('glue-cookie-notification-bar')[0];
+            if (cookieBanner) {
+                if (event.detail.visible) {
+                cookieBanner.classList.add('visible'); 
+                } else {
+                cookieBanner.classList.remove('visible');
+                }
+            }
+            });
+        }
+
+        (function (w, d, s, l) {
+          w[l] = w[l] || [];
+          w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '',
+            // Try to find a nonce on an existing script tag to reuse, or use a fallback
+            // This attempts to find the nonce of the current script block first.
+            currentScript = d.currentScript || d.querySelector('script[nonce="sim-nonce-cookie-init"]'),
+            n = currentScript ? (currentScript['nonce']||currentScript.getAttribute('nonce')) : 'sim-gtm-nonce';
+          j.async = true;
+          j.setAttribute('nonce', n); 
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TT9C75WP'; // Example GTM ID
+          if(f && f.parentNode) {
+             f.parentNode.insertBefore(j, f);
+          } else {
+             d.head.appendChild(j); // Fallback if f or f.parentNode is null
+          }
+          window[l].push({'event': 'dataLayer_initialized', 'page_name': 'Vulnerability Testing Framework'});
+        })(window, document, 'script', 'dataLayer');
+      }
+    </script>
+  <script src="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js" data-glue-cookie-notification-bar-category="2A" data-glue-cookie-notification-bar-site-id="VTF" nonce="sim-nonce-cookie-src" onload="glueCookieNotificationBarLoaded()"></script>
+  
+  <!-- GAPI Loader - More controlled loading sequence -->
+  <script nonce="sim-gapi-setup">
+    function onGapiClientLoad() {
+      console.log("GAPI client module (m=client) script finished execution, which called this callback (gapi.loaded_0).");
+      // For actual GAPI usage, one might initialize client here, e.g.:
+      // if (window.gapi && window.gapi.client) {
+      //   window.gapi.client.init({}).then(() => { console.log('GAPI client initialized.'); });
+      // }
+    }
+
+    function loadGapiClientModule() {
+      console.log("GAPI core (api.js) loaded. Dynamically loading GAPI client module.");
+      if (!window.gapi) {
+        console.error("GAPI core object (window.gapi) not found after api.js load.");
+        return;
+      }
+      // Define the callback that the m=client script will invoke via cb=gapi.loaded_0
+      window.gapi.loaded_0 = onGapiClientLoad;
+
+      const gapiClientScript = document.createElement('script');
+      // This URL is for the "client" module and specifies "gapi.loaded_0" as its callback name parameter.
+      gapiClientScript.src = "https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.en.nJpyt-fjzo8.O/m=client/rt=j/sv=1/d=1/ed=1/rs=AHpOoo9fTqXSCmwMDsu9FH68l5KSqr6MBg/cb=gapi.loaded_0?le=scs";
+      gapiClientScript.async = true;
+      // Try to reuse a nonce or set a specific one. The nonce should match your CSP if you have one.
+      const mainGapiNonce = document.querySelector('script[src*="apis.google.com/js/api.js"]')?.getAttribute('nonce');
+      gapiClientScript.setAttribute('nonce', mainGapiNonce || 'sim-nonce-gapi-client-dynamic');
+      document.head.appendChild(gapiClientScript);
+    }
+  </script>
+  <script src="https://apis.google.com/js/api.js?onload=loadGapiClientModule" async defer nonce="sim-nonce-gapi"></script>
+  
+  <!-- React Import Map -->
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "fmt": "https://esm.sh/fmt@^2.0.0",
+    "mermaid": "https://esm.sh/mermaid@^11.6.0"
+  }
+}
+</script>
+  
+  <!-- Feedback Widget (Placeholder) -->
+  <script async src="https://www.gstatic.com/feedback/js/help/prod/service/lazy.min.js" nonce="sim-nonce-feedback"></script>
+
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-background text-on-surface">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+  
+  <!-- [+] VULNERABLE INTEGRATION: Loading a third-party script that exfiltrates data. -->
+  <script async src="/gtm-loader.js" nonce="sim-gtm-loader-nonce"></script> 
+  <!-- Added nonce for completeness, though its value isn't critical for this simulation -->
+
+  <!-- Placeholder for Cookie Notification Bar HTML if needed, or it injects itself -->
+  <div class="glue-cookie-notification-bar" style="visibility: hidden;"></div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Solar Panel Efficiency Reaches Record 26.7% in Lab Tests",
+      "summary": "Researchers at MIT achieve breakthrough efficiency levels using innovative perovskite technology.",
+      "timestamp": "2024-01-15T09:00:00Z",
+      "category": "technology",
+      "importance": "high"
+    },
+    {
+      "id": 2,
+      "title": "Community Solar Programs Expand to 15 New States",
+      "summary": "Federal legislation enables broader access to solar energy for renters and apartment dwellers.",
+      "timestamp": "2024-01-14T14:30:00Z",
+      "category": "policy",
+      "importance": "medium"
+    },
+    {
+      "id": 3,
+      "title": "Solar Storage Costs Drop 30% in 2024",
+      "summary": "Battery technology improvements make home energy storage more affordable than ever.",
+      "timestamp": "2024-01-13T11:15:00Z",
+      "category": "economics",
+      "importance": "high"
+    },
+    {
+      "id": 4,
+      "title": "New Study: Solar Jobs Grew 15% Last Year",
+      "summary": "Employment in renewable energy sector continues rapid expansion across all skill levels.",
+      "timestamp": "2024-01-12T16:45:00Z", 
+      "category": "employment",
+      "importance": "medium"
+    },
+    {
+      "id": 5,
+      "title": "Smart Grid Integration Improves Solar Efficiency",
+      "summary": "AI-powered grid management systems optimize solar energy distribution and storage.",
+      "timestamp": "2024-01-11T13:20:00Z",
+      "category": "technology",
+      "importance": "medium"
+    }
+  ],
+  "lastUpdated": "2024-01-15T10:00:00Z"
+} 

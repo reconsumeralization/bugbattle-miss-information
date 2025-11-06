@@ -1,0 +1,26 @@
+{
+  "short_name": "VTF",
+  "name": "Vulnerability Testing Framework",
+  "description": "A web application to simulate a professional-grade, multi-language, automated security testing platform.",
+  "icons": [
+    {
+      "src": "//www.gstatic.com/aistudio/ai_studio_favicon_96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "//www.gstatic.com/aistudio/ai_studio_favicon_180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "//www.gstatic.com/aistudio/ai_studio_favicon_256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#111827",
+  "background_color": "#1f2937"
+}

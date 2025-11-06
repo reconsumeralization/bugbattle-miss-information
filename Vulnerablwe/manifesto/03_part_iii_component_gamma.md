@@ -1,0 +1,23 @@
+## Part III: Component γ (Gamma) — The Proactive Defense Matrix
+
+This is the **next-generation defense layer**. It is designed to neutralize advanced attacks, including the chained exploits demonstrated by Component α (The Adversarial Validation Engine). An updated version of Component α run against a system protected by Component γ would fail, proving the efficacy of these defenses.
+
+### Controls Matrix:
+
+| Threat Vector (Demonstrated by Component α)                      | Proactive Defense Control (Implemented by Component γ)                                                                  | How it Stops/Mitigates Component α's Attack                                                                                                                                                             |
+| :--------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Static API Key Leak (`K_STATIC`) leading to IDOR**             | **Action-Scoped, Short-Lived Tokens (e.g., OAuth 2.0 with strict scopes, JWTs per action)**                             | The powerful, shared `K_STATIC` is eliminated. The client receives temporary, narrowly scoped tokens. Component α's `exploit` mode fails as a token for User A cannot be used to access User B's resources. `Authenticate` and `Authorize` become tightly coupled for the specific resource access. |
+| **Client-Side Exposure of User IDs (`ID_USER`) facilitating IDOR targeting** | **Opaque User Identifiers (Session-Relative or UUIDs for client interaction if ID must be exposed)** & Strict Adherence to Authorization Blueprint (Component β, Rule #3) | While Component β is the primary defense, using less predictable IDs makes enumeration (simulated by `analyze-ids` in Component α) harder. The core fix remains server-side authorization.                 |
+| **Secondary Secret Exfiltration via AI Image Generation**        | **AI Data Loss Prevention (DLP) Gateway / Output Sanitization**                                                         | An egress proxy inspects AI model outputs *before* returning to the user. It scans for patterns (PII, secrets like `sk-live-...`, internal data formats) via regex, ML, or heuristics. Component α's `exfiltrate_via_image_gen` function would have its output (the image or its data) blocked or sanitized, preventing the secret from reaching the "attacker." |
+| **Scalable ID Enumeration (User ID pattern analysis)**           | **UUIDv4 for User Identifiers & Granular Rate Limiting on ID-based endpoints**                                          | Replaces predictable, sequential numeric `ID_USER`s with non-sequential UUIDs. Component α's `analyze-ids` mode would find no statistical patterns. Aggressive scanning attempts are further thwarted by strict rate limits on endpoints accepting User IDs as parameters. |
+| **(Future Threat) CI/CD Pipeline Compromise / Malicious Dependencies** | **Build Attestation (e.g., SLSA) & Binary Authorization & Secure Software Supply Chain Practices (Scoped Registries, Dependency Sandboxing)** | (Not directly tested by current Component α) Ensures that the deployed application code is exactly what was intended and built through a verified, untampered process. Prevents injection of backdoors or malicious code that could *create* new vulnerabilities for Component α to find. |
+| **(Future Threat) Model Inversion / Advanced Adversarial AI Attacks** | **Advanced Model Monitoring, Differential Privacy in Training/Fine-tuning, Input Validation & Sanitization for Training Data** | (Beyond current Component α's direct scope) Defends the AI models themselves from more sophisticated attacks that aim to extract training data or manipulate model behavior.                                   |
+
+**Principle of Component γ:**
+
+Component γ assumes that Component β (The Authorization Blueprint) is implemented correctly. Gamma's role is to provide defense-in-depth against:
+1.  Failures or bypasses of Component β (though β should be robust).
+2.  More sophisticated attack vectors that exploit the *nature* of the services (like AI services themselves).
+3.  Threats to the development and deployment lifecycle.
+
+Implementing Component γ transforms the security posture from reactive (fixing Beta violations found by Alpha) to proactive and resilient against classes of future attacks.

@@ -1,0 +1,6 @@
+{
+  "name": "Vulnerability Testing Framework",
+  "description": "A web application to simulate a professional-grade, multi-language, automated security testing platform, inspired by a detailed blueprint for identifying vulnerabilities like IDORs.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}

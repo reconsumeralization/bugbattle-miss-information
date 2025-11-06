@@ -1,0 +1,27 @@
+{
+  "name": "miss-information",
+  "version": "1.0.0",
+  "description": "AI-Powered Fact-Checking Education Platform",
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
+  "devCommand": "npm run dev",
+  "features": {
+    "tavus": true,
+    "real-time": true,
+    "ai-integration": true,
+    "educational": true
+  },
+  "env": {
+    "NEXTAUTH_URL": "https://your-bolt-url.bolt.new",
+    "NEXTAUTH_SECRET": "your-secret-key",
+    "TAVUS_API_KEY": "your-tavus-key",
+    "WIKIPEDIA_API_KEY": "optional"
+  },
+  "competition": {
+    "hackathon": "World's Largest Hackathon by Bolt",
+    "challenge": "Conversational AI Video Challenge",
+    "team": "Dawn of Anarchy"
+  }
+}
